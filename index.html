@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="./marked.js"></script>
+
+
+    <script>
+function updateElement(){
+let previewValue = document.getElementById("preview");
+let editorValue = document.getElementById("editor").value;
+let markedValue = marked(editorValue);
+    previewValue.innerHTML = markedValue;
+};
+
+function defaultText(){
+let defaultText = `\
+# The only person you are destined to become is the person you decide to be.
+## Always remember, your focus determines your reality
+[Page creator](https://www.linkedin.com/in/calvin-heath-0467a61b6/);
+
+You can also make text **bold**... whoa!
+Or _italic_.
+Or... wait for it... **_both!_**
+And feel free to go crazy ~~crossing stuff out~~.
+<dl>
+    <dt>Definition list</dt>
+    <dd>Is something people use sometimes.</dd>
+
+    <dt>Markdown in HTML</dt>
+    <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
+  </dl>
+
+There's also [links](https://github.com/CalvinJamesHeath), and
+
+![LifeMotto](https://i.pinimg.com/originals/b0/3d/04/b03d044029121a37d9df316146581931.jpg)
+
+> Block Quotes!
+
+\`this is multi-line code:\`
+
+\`\`\`javascript
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+\`\`\`
+
+- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
+- [x] list syntax required (any unordered or ordered list supported)
+- [x] this is a complete item
+- [ ] this is an inco
+
+- And of course there are lists.
+- Some are bulleted.
+- With different indentation levels.
+        - That look like this.
+
+
+1. And there are numbererd lists too.
+1. Use just 1s if you want!
+1. And last but not least, let's not forget embedded images:
+
+![Joke w/ Text](https://images-na.ssl-images-amazon.com/images/I/41BoZW08TEL.jpg)
+
+
+`;
+         let editorField = document.getElementById("editor");
+         let previewElement = document.getElementById("preview");
+         editorField.value = defaultText;
+         previewElement.innerHTML = marked(defaultText);
+};
+    </script>
+<style>
+img[alt=LifeMotto] {
+   width:600px;
+   height:400px;
+}
+</style>
+  <title> Markdown Previewer </title>
+  </head>
+  <body onload="defaultText()" class="bg-primary">
+        <div class="container-fluid">
+        <div class="row">
+        <div class="col text-center text-white bg-primary">
+        <h1 class="mt-2 mb-3"><u>Markdown by Calvin James Heath</u></h1>
+</div>
+</div>
+        <div class="row">
+        <div class="col-6 bg-warning text-center text-white d-flex flex-column">
+          <div class="form-group flex-grow-1 d-flex flex-column">
+            <h2 class="text-white text-center my-3 mb-4"><u>Use the editor below!</u></h2>
+            <textarea class="form-control flex-grow-1" id="editor" onkeyup="updateElement()"></textarea>
+</div>
+</div>
+        <div class="col-6 bg-success text-center text-white">
+<h2 class="text-white text-center my-3 mb-4"> <u> Markdown Results!</u></h2>
+<div id="preview">
+
+</div>
+</div>
+</div>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+  </body>
+</html>
